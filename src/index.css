@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+    margin: auto;
+    padding: 2%;
+}
+
+.header {
+    background-color: grey;
+    color: azure;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#idsearch {
+    margin-top: 2%;
+    width: 50%;
+}
+
+.form-empleados {
+    margin-top: 5px;
+    width: 50%;
+}
+
+.listadofinal {
+    background-color: rgb(181, 181, 181);
+    color: azure;
+    padding-left: 2%;
+    padding-right: 2%;
+}
