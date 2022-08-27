@@ -15,10 +15,11 @@ const FormularioApp = (props) => {
 
     const [name, setName] = useState("");
     const [mail, setMail] = useState("");
+    const [id, setId] = useState("");
 
     const capturarName = (e) => {
-        if (e.target.value === "Juan Peluca") {
-            setAlerta("No puedes ingresar un nombre ya existente")
+        if (e.target.value === "") {
+            setAlerta("Campos no pueden estar vacíos")
         }
         setName(e.target.value)
     }
@@ -38,11 +39,11 @@ const FormularioApp = (props) => {
         props.guardarEmpleado(empleado);
             ;
 
-        /*{
-            "id": 2,
-            "name": "Blanca Rojo",
-            "mail": "blancarojo@badcompany.com"
-        }*/
+        setMail('');    
+        setName('');    
+        setId ('');
+
+    
     }
 
     return (
@@ -67,7 +68,7 @@ const FormularioApp = (props) => {
                         <Form.Label>Mail</Form.Label>
                         <Form.Control
                             value={mail}
-                            onChange={capturarMail}
+                                onChange={capturarMail}
 
 
                             type="email" placeholder="Correo Electrónico" />
