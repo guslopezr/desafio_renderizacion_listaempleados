@@ -36,6 +36,7 @@ const FormularioApp = (props) => {
 
         console.log(empleado);
         props.guardarEmpleado(empleado);
+            ;
 
         /*{
             "id": 2,
