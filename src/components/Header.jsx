@@ -10,6 +10,8 @@ const Header = () => {
     <div>
 
         <h1 className='header' >Gestión de Colaboradores</h1>
+        <h4 >(El buscador aún no funciona)</h4>
+        
     </div>
     )
 }

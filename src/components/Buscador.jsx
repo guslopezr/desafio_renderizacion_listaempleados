@@ -1,12 +1,9 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-    Form,
-    Button
-} from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 
-const Buscador = ({buscar}) => {
+const Buscador = ({buscarNombre}) => {
 
     return (
 
@@ -17,9 +14,8 @@ const Buscador = ({buscar}) => {
                 placeholder="Buscar empleado"
                 className="me-2"
                 aria-label="Search"
-                onChange={buscar}
+                onChange={buscarNombre}
             />
-            <Button variant="outline-success">Buscar</Button>
         </Form>
     </div>
     )
