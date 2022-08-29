@@ -22,9 +22,9 @@ function App() {
       const search = empleados.filter((empleado) => {
         if (
           empleado.name
-            .trim()
+            .toString()
             .toLowerCase()
-            .includes(e.target.value)
+            .includes(e.target.value.toLowerCase())
         ) {
           return empleados;
         }

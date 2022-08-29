@@ -12,7 +12,7 @@ const TablaEmpleados = (props) => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Id de Empleado</th>
+                        <th>Id de Artista</th>
                         <th>Nombre Empleado</th>
                         <th>Correo Empleado</th>
                     </tr>
