@@ -12,6 +12,7 @@ code {
 .container {
     margin: auto;
     padding: 2%;
+    width: 80%;
 }
 
 .header {

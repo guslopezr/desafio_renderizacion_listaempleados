@@ -7,7 +7,7 @@ const TablaEmpleados = (props) => {
 
     return (
         <div>
-            <h3 className="listadofinal" >Listado de Colaboradores</h3>
+            <h3 className="listadofinal" >Listado de Artistas</h3>
 
             <Table striped bordered hover>
                 <thead>

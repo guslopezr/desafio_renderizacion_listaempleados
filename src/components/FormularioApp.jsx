@@ -1,89 +1,71 @@
 //Componente de Formulario
 import { useState } from "react";
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-    Form,
-    Button
-} from 'react-bootstrap';
-
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Form, Button } from "react-bootstrap";
 
 const FormularioApp = (props) => {
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [id, setId] = useState("");
 
-    const [alerta, setAlerta] = useState(null);
+  const capturarName = (e) => {
+    setName(e.target.value);
+  };
 
-    const [name, setName] = useState("");
-    const [mail, setMail] = useState("");
-    const [id, setId] = useState("");
+  const capturarMail = (e) => setMail(e.target.value);
 
-    const capturarName = (e) => {
-        if (e.target.value === "") {
-            setAlerta("Campos no pueden estar vacíos")
-        }
-        setName(e.target.value)
-    }
+  const guardarEmpleadoForm = (e) => {
+    e.preventDefault();
 
-    const capturarMail = (e) => setMail(e.target.value)
+    const empleado = {
+      id: Date.now(),
+      name: name,
+      mail: mail,
+    };
 
-    const guardarEmpleadoForm = (e) => {
-        e.preventDefault();
+    console.log(empleado);
+    props.guardarEmpleado(empleado);
+    setMail("");
+    setName("");
+    setId("");
+  };
 
-        const empleado = {
-            id: Date.now(),
-            name: name,
-            mail: mail
-        }
+  return (
+    <div>
+      <div className="form-empleados">
+        <form onSubmit={guardarEmpleadoForm}>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Nombre Artista</Form.Label>
+            <Form.Control
+              value={name}
+              onChange={capturarName}
+              type="text"
+              placeholder="Ingresa nombre artista nuevo"
+            />
+            <Form.Text className="text-muted">
+              Los datos son confidenciales
+            </Form.Text>
+          </Form.Group>
 
-        console.log(empleado);
-        props.guardarEmpleado(empleado);
-            ;
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Mail</Form.Label>
+            <Form.Control
+              value={mail}
+              onChange={capturarMail}
+              type="email"
+              placeholder="Correo Electrónico"
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Ingresar nuevo artista
+          </Button>
 
-        setMail('');    
-        setName('');    
-        setId ('');
-
-    
-    }
-
-    return (
-        <div>
-           
-            <div className="form-empleados">
-                <form onSubmit={guardarEmpleadoForm}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label >Nombre colaborador</Form.Label>
-                        <Form.Control
-                            value={name}
-                            onChange={capturarName}
- 
-
-                            type="text" placeholder="Ingresa nombre colaborador nuevo" />
-                        <Form.Text className="text-muted">
-                            Los datos son confidenciales
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Mail</Form.Label>
-                        <Form.Control
-                            value={mail}
-                                onChange={capturarMail}
-
-
-                            type="email" placeholder="Correo Electrónico" />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Ingresar nuevo colaborador
-                    </Button>
-                </form>
-                <br />
-
-            </div>
-
-        </div>
-    )
-}
+        </form>
+        <br />
+      </div>
+    </div>
+  );
+};
 
 export default FormularioApp;
-

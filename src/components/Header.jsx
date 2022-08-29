@@ -9,8 +9,7 @@ const Header = () => {
 
     <div>
 
-        <h1 className='header' >Gestión de Colaboradores</h1>
-        <h4 >(El buscador aún no funciona)</h4>
+        <h1 className='header' >Sistema de Gestión de Artistas Flamencos - SGAF</h1>
         
     </div>
     )
